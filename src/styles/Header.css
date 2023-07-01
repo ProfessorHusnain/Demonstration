@@ -1,0 +1,59 @@
+
+/*importing font for logo design*/
+@import url('https://fonts.googleapis.com/css2?family=Nova+Oval&family=Moirai+One&display=swap');
+
+/* common properities */
+header{
+    background: var(--eerie-black-2);
+    box-shadow: var(--shadow-1);
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+  font-size: 20px;
+  margin-left: 50px;
+  font-family: 'Nova Oval',cursive;
+  color: var(--vegas-gold);
+
+}
+.logo h1{
+     margin: 0%;
+}
+.logo span:first-child{
+    font-family: 'Moirai One',cursive;
+}
+.logo span:nth-child(2){
+    margin-left: 5px;
+    display: inline-block;
+    border-radius: 5px;
+    width: 150px;
+    height: 5px;
+    background:var(--logo-gradient-line)
+}
+.menu{
+  margin-right:50px; 
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+}
+.menu h1{
+    margin: auto;
+}
+
+
+
+/**
+*
+**# Responsive 
+*
+**/
+
+@media (max-width:700px){
+    .logo{
+        font-size: 15px;
+    }
+    .logo span:nth-child(2){
+        width: 50px;
+    } 
+}
