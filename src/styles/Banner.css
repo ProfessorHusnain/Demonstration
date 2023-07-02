@@ -1,6 +1,6 @@
 .banner {
     position: relative;
-    height: 100vh;
+    height: 90vh;
   }
   
   .banner img {
@@ -21,7 +21,7 @@
     position: absolute;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(50%);
   }
   
   .banner-controls button {

@@ -7,11 +7,11 @@ header{
     background: var(--eerie-black-2);
     box-shadow: var(--shadow-1);
     display: flex;
-    justify-content: space-between;
 }
 .logo{
   font-size: 20px;
   margin-left: 50px;
+  flex-grow: 0;
   font-family: 'Nova Oval',cursive;
   color: var(--vegas-gold);
 
@@ -30,16 +30,37 @@ header{
     height: 5px;
     background:var(--logo-gradient-line)
 }
-.menu{
-  margin-right:50px; 
+.nav-bar{
+  margin: 0 50px; 
   display: flex;
+   flex-grow: 1;
+   text-transform: capitalize;
   justify-content: center;
   text-align: center;
   align-content: center;
+  padding: 5px 10px;
+  cursor: pointer;
+   
 }
-.menu h1{
-    margin: auto;
+.nav-links{
+   display: flex;
+   flex-grow: 1;
+  justify-content: space-around;
+  list-style-type: none;
+
 }
+.nav-link{
+    text-decoration: none;
+    color: white;
+    transition: border-bottom-color 0.3s ease-in-out;
+    border-bottom: 2px solid #c71414;
+    padding: 3px 0;
+    height: 100%;
+  }
+  .nav-link.active {
+    border-bottom: 2px solid #c71414;
+  }
+ 
 
 
 

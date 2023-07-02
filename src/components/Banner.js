@@ -4,9 +4,9 @@ import '../styles/Banner.css'
 const Banner = () => {
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
   const bannerImages = [
-    '/logo192.png',
-    '/logo512.png',
-    '/logo192.png',
+    '/images/i1.jpg',
+    '/images/i2.jpg',
+    '/images/i3.jpg',
   ];
 
   // Function to automatically change the banner every few seconds
