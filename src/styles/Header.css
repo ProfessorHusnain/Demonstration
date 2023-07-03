@@ -65,7 +65,7 @@ header{
   display: none;
 }
 
-
+ 
 /**
 *
 **# Responsive 
@@ -101,6 +101,7 @@ header{
       align-items: center;
       margin-right: 10px;
       font-size: 25px;
+      cursor: pointer;
     }
 
 }

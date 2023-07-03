@@ -1,0 +1,39 @@
+.side-bar{
+    display: none;
+    justify-content: start;
+    align-content: start;
+    background: var(--eerie-black-2);
+    border-bottom: 1px solid var(--jet);
+    border-radius: 0 0 20px 20px;
+    padding: 15px;
+    box-shadow: var(--shadow-1);
+    z-index: 1;
+  }
+  .side-bar.active{
+     display: flex;
+  }
+.side-links{
+    width: 100%;
+    font-size: 25px;
+ 
+}
+  .side-links li{
+   text-transform: capitalize;
+     margin-top: 10px;
+    text-decoration: none;
+  }
+  .side-link{
+    display: flex;
+    text-align: start;
+     flex-grow: 1;
+    color: white;
+    margin-left:25px;
+  }
+  .side-icon{
+    margin-right:10px;
+  }
+  .side-link.active{
+     color: var(--vegas-gold);
+  }
+  
+  
