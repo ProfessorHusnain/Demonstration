@@ -1,40 +1,55 @@
 import "../styles/Header.css";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import React, { useState } from 'react';
+import {  TiThMenu } from 'react-icons/ti';
 
-function Header(){
+function Header() {
 
     return (
         <header>
-         <div className='logo'>
-          <h1>Next<span>X</span>io<span></span></h1>
-         </div>
-         <div className="nav-bar">
-               <ul className="nav-links">
-                <li>
-                    <Link to='/'  className="nav-link">Home</Link>
-                </li>
-                <li>
-                <Link to='/about' className="nav-link">About</Link>
-                    
-                </li>
-                <li>
-                <Link to='/services' className="nav-link">Services</Link>
-                    
-                </li>
-                <li>
-                <Link to='/price' className="nav-link">Price</Link>
-                    
-                </li>
-                <li>
-                    <Link to='/contact' className="nav-link">Contact us</Link>
-                    
-                </li>
-               </ul>
-         </div>
-        
-         
-        </header>  
+            <div className='logo'>
+                <h1>Next<span>X</span>io<span></span></h1>
+            </div>
+            <div className="mobile"><TiThMenu /></div>
+            <NavBar />
+
+        </header>
     );
 }
+
+ 
+const NavBar= ()=> {
+  return (
+    
+      <div className="nav-bar">
+                <ul className="nav-links">
+                    <li>
+                        <NavLink to='/' className="nav-link">Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/about' className="nav-link">About</NavLink>
+
+                    </li>
+                    <li>
+                        <NavLink to='/services' className="nav-link">Services</NavLink>
+
+                    </li>
+                    <li>
+                        <NavLink to='/price' className="nav-link">Price</NavLink>
+
+                    </li>
+                    <li>
+                        <NavLink to='/contact' className="nav-link">Contact us</NavLink>
+
+                    </li>
+                </ul>
+            </div>
+ 
+  );
+}
+
+ 
+
+
+
 export default Header;

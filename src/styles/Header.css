@@ -26,7 +26,7 @@ header{
     margin-left: 5px;
     display: inline-block;
     border-radius: 5px;
-    width: 150px;
+    width: 100px;
     height: 5px;
     background:var(--logo-gradient-line)
 }
@@ -47,21 +47,23 @@ header{
    flex-grow: 1;
   justify-content: space-around;
   list-style-type: none;
+   
 
 }
 .nav-link{
     text-decoration: none;
     color: white;
-    transition: border-bottom-color 0.3s ease-in-out;
-    border-bottom: 2px solid #c71414;
     padding: 3px 0;
     height: 100%;
   }
   .nav-link.active {
-    border-bottom: 2px solid #c71414;
+    transition: border-bottom cubic-bezier(0,.87,.96,.23);
+    border-bottom: 3px solid var(--vegas-gold);
   }
  
-
+.mobile{
+  display: none;
+}
 
 
 /**
@@ -70,11 +72,48 @@ header{
 *
 **/
 
-@media (max-width:700px){
+@media screen and (max-width:880px) {
+  .nav-bar{
+    margin: 0;
+    padding: auto;
+  }
+  .nav-link{
+    justify-content: space-between;
+    margin:0%;
+  }
+}
+
+@media screen and (max-width:750px){
+     header{
+      justify-content: space-between;
+     }
     .logo{
         font-size: 15px;
     }
     .logo span:nth-child(2){
-        width: 50px;
+        width: 100px;
     } 
+    .nav-bar{
+      display: none;
+    }
+    .mobile{
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+      font-size: 25px;
+    }
+
+}
+
+@media screen and (max-width:450px){
+  .logo{
+      
+      margin-left:10px;
+  }
+  .logo span:nth-child(2){
+      width: 60px;
+  } 
+  .nav-links{
+    display: none;
+  }
 }
