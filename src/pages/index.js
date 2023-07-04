@@ -48,6 +48,7 @@ const Home = () => {
         <Banner />
         <About />
         <Services />
+        <Price />
         {/*<Routes>
         
       <Route path='/' Component={Banner}></Route>

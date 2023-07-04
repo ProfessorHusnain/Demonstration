@@ -133,13 +133,7 @@ li { list-style: none; }
 
 img, ion-icon, a, button, time  { display: block; }
 
-button {
-font: inherit;
-background: none;
-border: none;
-text-align: left;
-cursor: pointer;
-}
+ 
 
 input, textarea {
 display: block;
