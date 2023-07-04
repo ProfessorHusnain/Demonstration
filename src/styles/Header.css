@@ -14,6 +14,7 @@ header{
   flex-grow: 0;
   font-family: 'Nova Oval',cursive;
   color: var(--vegas-gold);
+  cursor: pointer;
 
 }
 .logo h1{

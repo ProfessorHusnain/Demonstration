@@ -31,7 +31,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="banner" id=''>
+    <div className="banner" id='home'>
       {bannerImages.map((image, index) => (
         <img
           key={index}

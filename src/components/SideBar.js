@@ -1,7 +1,7 @@
 import React from 'react'
 import { RiHome2Line as Home, RiInformationLine as Info, RiBriefcaseLine as Briefcase, RiMoneyDollarCircleLine as Dollar, RiContactsLine as Contact } from 'react-icons/ri';
 import '../styles/SideBar.css';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-scroll';
 
 const SideBar = ({isActive,menuClick}) => {
   return (
@@ -10,40 +10,40 @@ const SideBar = ({isActive,menuClick}) => {
     <div className={`side-bar ${isActive?'active':''}`}>
     <ul className="side-links">
     <li>
-        <NavLink to='/' className="side-link" onClick={menuClick}> 
+        <Link to='home' activeClass="active"  spy={true} smooth={true} offset={-85} duration={500}  className="side-link" onClick={menuClick}> 
         <div className='side-icon'>
         <Home />
         </div>
-        Home</NavLink>
+        Home</Link>
     </li>
     <li>
-        <NavLink to='/about' className="side-link" onClick={menuClick}>
+        <Link to='about' activeClass="active"  spy={true} smooth={true} offset={-85} duration={500} className="side-link" onClick={menuClick}>
         <div className='side-icon'>
             <Info/>
         </div>
-        About</NavLink>
+        About</Link>
 
     </li>
     <li>
-        <NavLink to='/services' className="side-link" onClick={menuClick}>
+        <Link to='services' activeClass="active"  spy={true} smooth={true} offset={-85} duration={500} className="side-link" onClick={menuClick}>
         <div className='side-icon'>
             <Briefcase/>
         </div>
-        Services</NavLink>
+        Services</Link>
     </li>
     <li>
-        <NavLink to='/price' className="side-link" onClick={menuClick}>
+        <Link to='price' activeClass="active"  spy={true} smooth={true} offset={-85} duration={500} className="side-link" onClick={menuClick}>
         <div className='side-icon'>
             <Dollar/>
         </div>
-        Price</NavLink>
+        Price</Link>
     </li>
     <li>
-        <NavLink to='/contact' className="side-link" onClick={menuClick}>
+        <Link to='contact' activeClass="active"  spy={true} smooth={true} offset={-85} duration={500} className="side-link" onClick={menuClick}>
         <div className='side-icon'>
             <Contact />
         </div>
-        Contact us</NavLink>
+        Contact us</Link>
     </li>
     </ul>
 </div>

@@ -1,5 +1,5 @@
 import "../styles/Header.css";
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-scroll';
 import React, { useState, useEffect } from 'react';
 import { TiThMenu } from 'react-icons/ti';
 import { RiCloseLine } from 'react-icons/ri';
@@ -29,9 +29,11 @@ function Header({ isActive, menuClick }) {
 
     return (
         <header>
+            <Link to='home' className="nav-link" smooth={true} offset={-85} duration={500}>
             <div className='logo'>
                 <h1>Next<span>X</span>io<span></span></h1>
             </div>
+            </Link>
             <div className="mobile">{isActive ? <RiCloseLine onClick={menuClick} /> : <TiThMenu onClick={menuClick} />}</div>
             <NavBar />
         </header>
@@ -45,22 +47,22 @@ const NavBar = () => {
         <div className="nav-bar">
             <ul className="nav-links">
                 <li>
-                    <NavLink to='/' className="nav-link">Home</NavLink>
+                    <Link to='home' className="nav-link" activeClass="active" spy={true} smooth={true} offset={-85} duration={500}>Home</Link>
                 </li>
                 <li>
-                    <NavLink to='/about' className="nav-link">About</NavLink>
+                    <Link to='about' className="nav-link" activeClass="active"  spy={true} smooth={true} offset={-85} duration={500}>About</Link>
 
                 </li>
                 <li>
-                    <NavLink to='/services' className="nav-link">Services</NavLink>
+                    <Link to='services' className="nav-link" activeClass="active" spy={true} smooth={true} offset={-85} duration={500}>Services</Link>
 
                 </li>
                 <li>
-                    <NavLink to='/price' className="nav-link">Price</NavLink>
+                    <Link to='price' activeClass="active"  spy={true} smooth={true} offset={-85} duration={500} className="nav-link">Price</Link>
 
                 </li>
                 <li>
-                    <NavLink to='/contact' className="nav-link">Contact us</NavLink>
+                    <Link to='contact' activeClass="active"  spy={true} smooth={true} offset={-85} duration={500} className="nav-link">Contact us</Link>
 
                 </li>
             </ul>

@@ -1,3 +1,4 @@
+ 
 
 h1{
     font-weight: 900;
@@ -8,6 +9,7 @@ h1{
     justify-content: space-between;
     gap: 5px;
     margin: 0 5px;
+    
 }
 .content-container{
     display: flex;

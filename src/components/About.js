@@ -11,7 +11,7 @@ const data=[
 
 const About = () => {
   return (
-    <div id='about' name="about">
+    <div id='about'  className='about-container'>
     <h1>About</h1>
     <div className='about'>
         {data.map((d)=>
