@@ -1,3 +1,4 @@
+ 
 .side-bar{
     display: none;
     justify-content: start;
@@ -17,6 +18,9 @@
     font-size: 25px;
  
 }
+.side-link:hover{
+  border-bottom: 1px solid var(--light-gray-70);
+}
   .side-links li{
    text-transform: capitalize;
      margin-top: 10px;
@@ -27,7 +31,8 @@
     text-align: start;
      flex-grow: 1;
     color: white;
-    margin-left:25px;
+    margin:0 25px;
+  
   }
   .side-icon{
     margin-right:10px;
@@ -36,4 +41,14 @@
      color: var(--vegas-gold);
   }
   
-  
+  /**
+  Bug fixing 
+  */
+  @media screen and(max-width:750px) {
+    .side-bar{
+      display: none;
+    }
+    .side-bar.active{
+      display: none;
+    }
+  }

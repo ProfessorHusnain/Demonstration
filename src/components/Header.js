@@ -1,17 +1,38 @@
 import "../styles/Header.css";
 import { NavLink } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TiThMenu } from 'react-icons/ti';
 import { RiCloseLine } from 'react-icons/ri';
 
-function Header({isActive,menuClick}) {
+function Header({ isActive, menuClick }) {
+
+    {/**
+         Handel if screen size change from mobile view to desktop view then close the side 
+         side bar if it's active
+     */}
+     
+    useEffect(() => {
+        const handleResize = () => {
+          if(window.innerWidth>=750){
+            
+            if(isActive){
+                menuClick()
+            }
+          } 
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        return () =>  window.removeEventListener('resize', handleResize);
+
+      }, [isActive])
 
     return (
         <header>
             <div className='logo'>
                 <h1>Next<span>X</span>io<span></span></h1>
             </div>
-            <div className="mobile">{isActive?<RiCloseLine onClick={menuClick}/>:<TiThMenu onClick={menuClick} />}</div>
+            <div className="mobile">{isActive ? <RiCloseLine onClick={menuClick} /> : <TiThMenu onClick={menuClick} />}</div>
             <NavBar />
         </header>
     );

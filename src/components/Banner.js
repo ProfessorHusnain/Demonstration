@@ -4,9 +4,14 @@ import '../styles/Banner.css'
 const Banner = () => {
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
   const bannerImages = [
-    '/images/i1.jpg',
-    '/images/i2.jpg',
-    '/images/i3.jpg',
+    './images/i-6.png',
+    './images/i-7.webp',
+    './images/i-8.png',
+    './images/i-1.svg',
+    './images/i-2.svg',
+    './images/i-3.svg',
+    './images/i-4.svg',
+    './images/i-5.svg',
   ];
 
   // Function to automatically change the banner every few seconds
@@ -26,7 +31,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="banner">
+    <div className="banner" id=''>
       {bannerImages.map((image, index) => (
         <img
           key={index}

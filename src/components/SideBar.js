@@ -3,19 +3,21 @@ import { RiHome2Line as Home, RiInformationLine as Info, RiBriefcaseLine as Brie
 import '../styles/SideBar.css';
 import { NavLink } from 'react-router-dom';
 
-const SideBar = ({isActive}) => {
+const SideBar = ({isActive,menuClick}) => {
   return (
+   
+
     <div className={`side-bar ${isActive?'active':''}`}>
     <ul className="side-links">
     <li>
-        <NavLink to='/' className="side-link"> 
+        <NavLink to='/' className="side-link" onClick={menuClick}> 
         <div className='side-icon'>
         <Home />
         </div>
         Home</NavLink>
     </li>
     <li>
-        <NavLink to='/about' className="side-link">
+        <NavLink to='/about' className="side-link" onClick={menuClick}>
         <div className='side-icon'>
             <Info/>
         </div>
@@ -23,21 +25,21 @@ const SideBar = ({isActive}) => {
 
     </li>
     <li>
-        <NavLink to='/services' className="side-link">
+        <NavLink to='/services' className="side-link" onClick={menuClick}>
         <div className='side-icon'>
             <Briefcase/>
         </div>
         Services</NavLink>
     </li>
     <li>
-        <NavLink to='/price' className="side-link">
+        <NavLink to='/price' className="side-link" onClick={menuClick}>
         <div className='side-icon'>
             <Dollar/>
         </div>
         Price</NavLink>
     </li>
     <li>
-        <NavLink to='/contact' className="side-link">
+        <NavLink to='/contact' className="side-link" onClick={menuClick}>
         <div className='side-icon'>
             <Contact />
         </div>
@@ -45,6 +47,7 @@ const SideBar = ({isActive}) => {
     </li>
     </ul>
 </div>
+ 
   )
 }
 
