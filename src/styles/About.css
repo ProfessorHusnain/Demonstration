@@ -70,4 +70,8 @@ h1{
         margin-left: 5%;
         font-size: large;
    }
+   h1{
+    font-size: large;
+    font-weight: bolder;
+  }
 }

@@ -5,6 +5,8 @@ import Banner from '../components/Banner';
 import SideBar from '../components/SideBar';
 import HeroSection from '../components/HeroSection';
 import About from '../components/About';
+import Services from '../components/Services';
+import Price from '../components/Price';
 
 const Home = () => {
     const [isSideBarActive,setIsSideBarActive]=useState(false);
@@ -45,6 +47,7 @@ const Home = () => {
        <SideBar isActive={isSideBarActive} menuClick={toggleSideBar}/>
         <Banner />
         <About />
+        <Services />
         {/*<Routes>
         
       <Route path='/' Component={Banner}></Route>

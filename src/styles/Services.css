@@ -1,0 +1,20 @@
+.services{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5px;
+    margin: 0 5px;
+}
+
+/**
+ ##
+    Responsive
+ ##
+**/ 
+
+@media screen and (max-width:750px){
+    .services{
+        flex-direction: column;   
+        justify-content: space-around;
+    }
+}
