@@ -8,15 +8,16 @@ import Services from '../components/Services';
 import Price from '../components/Price';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-
+import { FaArrowUp as UpIcon } from 'react-icons/fa';
+import { Link } from 'react-scroll';
 const Home = () => {
 
   const [isSideBarActive, setIsSideBarActive] = useState(false);
 
-  const [screenSize,setScreenSize]=useState(window.innerHeight);
+  const [screenSize, setScreenSize] = useState(window.innerHeight);
 
-  const [isScrolled,setIsScrolled]=useState(false)
-  
+  const [isScrolled, setIsScrolled] = useState(false)
+
   /*
    ## - Handel toggel of side bar 
   */
@@ -29,8 +30,8 @@ const Home = () => {
   * Detect Scroll
   */
 
-  const detectScroll=()=>{
-    (window.scrollY >= 100) ? setIsScrolled(true):setIsScrolled(false)
+  const detectScroll = () => {
+    (window.scrollY >= 500) ? setIsScrolled(true) : setIsScrolled(false)
   }
 
   /**
@@ -46,7 +47,7 @@ const Home = () => {
         }
       }
     }
-    
+
     window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', detectScroll);
     return () => {
@@ -69,7 +70,7 @@ const Home = () => {
   /*
   * Handeling screen height for every component
   */
-  
+
   /*useEffect(()=>{
     const heightHandler= ()=>{
       setScreenSize(window.innerHeight)
@@ -86,12 +87,15 @@ const Home = () => {
   return (
     <>
       <Router>
-        
+
         <div style={style}>
           <Header isScrolled={isScrolled} isActive={isSideBarActive} menuClick={toggleSideBar} />
           <SideBar isScrolled={isScrolled} isActive={isSideBarActive} menuClick={toggleSideBar} />
         </div>
-    
+        <div className={`ScrollUp ${isScrolled?'active':''}`}>
+          <Link to='home' smooth={true} offset={-85} duration={900}><UpIcon /></Link>
+        </div>
+
         <Banner />
         <About />
         <Services />

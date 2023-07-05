@@ -213,3 +213,28 @@ z-index: 1;
 h1{
   margin: 0%;
 }
+.ScrollUp{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--jet);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+.ScrollUp.active {
+  opacity: 1;
+}
+.ScrollUp:hover{
+  transform: scale(1.05);
+  transition: all .45s;
+}

@@ -4,11 +4,9 @@
 
 /* common properities */
 header{
-
     box-shadow: var(--shadow-1);
     display: flex;
     background-color: rgba(0, 0, 0, 0.8); 
-    
 }
 header.scrolled {
   background: var(--eerie-black-2);
