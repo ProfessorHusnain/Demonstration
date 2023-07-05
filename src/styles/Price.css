@@ -1,25 +1,31 @@
+.price-container{
+    height: 600px;
+    
+}
 .price {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 50px;
-    gap: 25px;
-    height: 100vh;
+    margin: 50px;
+  
 }
 
 .card {
-    background: var(--eerie-black-2);
-    border: 1px solid var(--jet);
+    background-color: rgba(255, 255, 255,0.5);
     border-radius: 20px;
     padding: 15px;
-    box-shadow: var(--shadow-1);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+    0 10px 10px rgba(0,0,0,0.22);
     z-index: 1;
-    width: 50%;
+    width: 300px;
+    height: 400px;
+
+  
 }
 
 .card:hover {
-    transform: scale(1.05);
-    transition: all .35s;
+    transform: scale(1.099);
+    transition: all .45s;
 }
 
 .price-details span:first-child {
@@ -27,17 +33,18 @@
 }
 
 .price-details span:nth-child(2) {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .card img {
-    width: 50%;
-    height: 50%;
+    width: 25%;
+    height: 30%;
     margin: auto;
 }
 
 .card h1 {
     text-transform: uppercase;
+    font-size: medium;
 }
 
 .offers {
@@ -54,19 +61,23 @@
     justify-content: center;
 }
 
-button {
+.action button {
     cursor: pointer;
     border: none;
     background: var(--orange-yellow-crayola);
     width: 50%;
     text-align: center;
     border-radius: 10px;
+    font-size: medium;
 }
 
-button.active {
+.action  button.active {
     transform: scaleX(.005);
     transform: scaleY(.005);
     transition: all .35s;
+}
+.action  button:hover{
+   background: var(--card-gradient);
 }
 
 @media screen and (max-width:1030px) {

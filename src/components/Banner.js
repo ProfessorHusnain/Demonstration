@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Banner.css'
 
-const Banner = () => {
+const Banner = ({style}) => {
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
   const bannerImages = [
     './images/i-6.png',
@@ -42,11 +42,11 @@ const Banner = () => {
       ))}
       <div className="banner-controls">
         {bannerImages.map((_, index) => (
-          <button
+          <div
             key={index}
             onClick={() => changeBanner(index)}
-            className={currentBannerIndex === index ? 'active' : ''}
-          ></button>
+            className={`slider ${currentBannerIndex === index ? 'active' : ''}`}
+          ></div>
         ))}
       </div>
     </div>

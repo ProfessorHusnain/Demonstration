@@ -10,14 +10,27 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 const Home = () => {
+
   const [isSideBarActive, setIsSideBarActive] = useState(false);
 
+  const [screenSize,setScreenSize]=useState(window.innerHeight);
+
+  const [isScrolled,setIsScrolled]=useState(false)
+  
   /*
    ## - Handel toggel of side bar 
   */
 
   const toggleSideBar = () => {
     setIsSideBarActive(!isSideBarActive);
+  }
+
+  /*
+  * Detect Scroll
+  */
+
+  const detectScroll=()=>{
+    (window.scrollY >= 100) ? setIsScrolled(true):setIsScrolled(false)
   }
 
   /**
@@ -33,8 +46,13 @@ const Home = () => {
         }
       }
     }
+    
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener('scroll', detectScroll);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', detectScroll);
+    }
 
   }, [isSideBarActive])
 
@@ -48,14 +66,32 @@ const Home = () => {
     zIndex: '1000'
   }
 
+  /*
+  * Handeling screen height for every component
+  */
+  
+  /*useEffect(()=>{
+    const heightHandler= ()=>{
+      setScreenSize(window.innerHeight)
+    }
+    window.addEventListener('resize',heightHandler)
+    return ()=>window.removeEventListener('resize',heightHandler)
+  },[])
+
+  const componentHeight = {
+    height: screenSize + 'px',
+  };*/
+
 
   return (
     <>
       <Router>
+        
         <div style={style}>
-          <Header isActive={isSideBarActive} menuClick={toggleSideBar} />
-          <SideBar isActive={isSideBarActive} menuClick={toggleSideBar} />
+          <Header isScrolled={isScrolled} isActive={isSideBarActive} menuClick={toggleSideBar} />
+          <SideBar isScrolled={isScrolled} isActive={isSideBarActive} menuClick={toggleSideBar} />
         </div>
+    
         <Banner />
         <About />
         <Services />

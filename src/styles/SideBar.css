@@ -13,6 +13,9 @@
   .side-bar.active{
      display: flex;
   }
+  .scrolled {
+    background-color: rgba(0, 0, 0, 0.9); 
+  }
 .side-links{
     width: 100%;
     font-size: 25px;

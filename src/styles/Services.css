@@ -1,3 +1,7 @@
+.services-container{
+    height: 600px;
+    
+}
 .services{
     display: flex;
     flex-direction: row;

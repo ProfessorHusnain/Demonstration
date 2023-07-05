@@ -3,11 +3,11 @@ import { RiHome2Line as Home, RiInformationLine as Info, RiBriefcaseLine as Brie
 import '../styles/SideBar.css';
 import { Link } from 'react-scroll';
 
-const SideBar = ({isActive,menuClick}) => {
-  return (
-   
-
-    <div className={`side-bar ${isActive?'active':''}`}>
+const SideBar = ({isScrolled,isActive,menuClick}) => {
+  
+  
+    return (
+    <div className={`side-bar ${isActive?'active':''} ${isScrolled?'scrolled':''}`}>
     <ul className="side-links">
     <li>
         <Link to='home' activeClass="active"  spy={true} smooth={true} offset={-85} duration={500}  className="side-link" onClick={menuClick}> 

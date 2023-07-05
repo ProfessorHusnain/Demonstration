@@ -10,7 +10,7 @@ const data=[
 
 const Services = () => {
   return (
-    <div id='services'>
+    <div id='services' className='services-container'>
     <h1>Services</h1>
     <div className='services'>
         {data.map((d)=>

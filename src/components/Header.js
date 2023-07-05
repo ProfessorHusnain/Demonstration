@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { TiThMenu } from 'react-icons/ti';
 import { RiCloseLine } from 'react-icons/ri';
 
-function Header({ isActive, menuClick }) {
+function Header({ isScrolled,isActive, menuClick }) {
 
     {/**
          Handel if screen size change from mobile view to desktop view then close the side 
@@ -27,8 +27,9 @@ function Header({ isActive, menuClick }) {
 
       }, [isActive])
 
+      /**Making Transparent on scroll */
     return (
-        <header>
+        <header className={isScrolled?'scrolled':''}>
             <Link to='home' className="nav-link" smooth={true} offset={-85} duration={500}>
             <div className='logo'>
                 <h1>Next<span>X</span>io<span></span></h1>
@@ -54,11 +55,11 @@ const NavBar = () => {
 
                 </li>
                 <li>
-                    <Link to='services' className="nav-link" activeClass="active" spy={true} smooth={true} offset={-85} duration={500}>Services</Link>
+                    <Link to='services' className="nav-link" activeClass="active" spy={true} smooth={true} offset={-80} duration={500}>Services</Link>
 
                 </li>
                 <li>
-                    <Link to='price' activeClass="active"  spy={true} smooth={true} offset={-85} duration={500} className="nav-link">Price</Link>
+                    <Link to='price' activeClass="active"  spy={true} smooth={true} offset={-90} duration={500} className="nav-link">Price</Link>
 
                 </li>
                 <li>

@@ -46,6 +46,16 @@
 
    
   );
+  --card-gradient: linear-gradient(
+    to right ,
+    hsl(240, 58%, 86%),
+    hsl(61, 67%, 76%),
+    hsl(69, 60%, 66%),
+    hsl(45, 63%, 67%), 
+    hsl(56, 51%, 61%)
+
+   
+  );
 
   /* solid */
 
@@ -131,7 +141,7 @@ a { text-decoration: none; }
 
 li { list-style: none; }
 
-img, ion-icon, a, button, time  { display: block; }
+img, ion-icon, a, time  { display: block; }
 
  
 
@@ -151,7 +161,7 @@ color: var(--smoky-black);
 
 html { font-family: var(--ff-poppins); margin: 0; }
 
-body { background: var(--smoky-black); color:white  ; margin: 0;}
+body { background: var(--white-2); color: var(--smoky-black)  ; margin: 0;}
 
 .separator {
   width: 100%;
@@ -199,4 +209,7 @@ border-radius: 20px;
 padding: 15px;
 box-shadow: var(--shadow-1);
 z-index: 1;
+}
+h1{
+  margin: 0%;
 }

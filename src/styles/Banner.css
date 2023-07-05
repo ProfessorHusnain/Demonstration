@@ -1,7 +1,6 @@
 .banner {
   position: relative;
-  height: 100vh;
-  margin-top: 10px;
+  height: 600px; 
 }
 
 .banner img {
@@ -25,7 +24,7 @@
   transform: translateX(-50%);
 }
 
-.banner-controls button {
+.slider {
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -36,14 +35,15 @@
   padding: 0;
 }
 
-.banner-controls button.active {
-  background-color: var(--vegas-gold);
+.slider.active {
+  background: var(--text-gradient-yellow);
+  
 }
 
 
 @media screen and (min-width:750px){
 
-  .banner-controls button {
+  .slider {
      width: 25px;
      border-radius: 10px;
   }

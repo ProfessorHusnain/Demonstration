@@ -4,9 +4,14 @@
 
 /* common properities */
 header{
-    background: var(--eerie-black-2);
+
     box-shadow: var(--shadow-1);
     display: flex;
+    background-color: rgba(0, 0, 0, 0.8); 
+    
+}
+header.scrolled {
+  background: var(--eerie-black-2);
 }
 .logo{
   font-size: 20px;
