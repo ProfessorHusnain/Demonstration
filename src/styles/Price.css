@@ -61,24 +61,9 @@
     justify-content: center;
 }
 
-.action button {
-    cursor: pointer;
-    border: none;
-    background: var(--orange-yellow-crayola);
-    width: 50%;
-    text-align: center;
-    border-radius: 10px;
-    font-size: medium;
-}
-
-.action  button.active {
-    transform: scaleX(.005);
-    transform: scaleY(.005);
-    transition: all .35s;
-}
-.action  button:hover{
-   background: var(--card-gradient);
-}
+ 
+ 
+ 
 
 @media screen and (max-width:1030px) {
 
