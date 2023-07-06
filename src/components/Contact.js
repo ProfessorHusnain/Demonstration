@@ -26,8 +26,8 @@ const Contact = () => {
   return (
     /**Container Hold the complete contact page */
     <div className='contact-container' id='contact'>
-      <h1>Contact Us</h1>
-
+      <h1>Contact Us<span className='heading-line'></span></h1>
+      
       {/**Making the contact page sperated from the heading part of the page */}
       <div className='contact'>
 

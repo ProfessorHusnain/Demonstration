@@ -46,6 +46,16 @@
 
    
   );
+  --heading-gradient-line: linear-gradient(
+    to right ,
+    hsl(240, 20%, 93%),
+    hsl(252, 7%, 86%),
+    hsl(252, 7%, 86%),
+    hsl(45, 100%, 72%), 
+    hsl(35, 100%, 68%)
+
+   
+  );
   --card-gradient: linear-gradient(
     to right ,
     hsl(240, 58%, 86%),
@@ -174,7 +184,15 @@ button:hover{
 
 
 h1{
-  margin: 0%;
+  margin: 0%; 
+}
+.heading-line{
+  margin-left: 5px;
+  display: inline-block;
+  border-radius: 5px;
+  width: 100px;
+  height: 5px;
+  background:var(--heading-gradient-line)
 }
 .ScrollUp{
   position: fixed;

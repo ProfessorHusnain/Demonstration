@@ -12,7 +12,7 @@ const data=[
 const About = () => {
   return (
     <div id='about'  className='about-container'>
-    <h1>About</h1>
+    <h1>About<span className='heading-line'></span></h1>
     <div className='about'>
         {data.map((d)=>
             <>

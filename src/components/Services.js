@@ -11,7 +11,7 @@ const data=[
 const Services = () => {
   return (
     <div id='services' className='services-container'>
-    <h1>Services</h1>
+    <h1>Services<span className='heading-line'></span></h1>
     <div className='services'>
         {data.map((d)=>
             <>

@@ -43,7 +43,7 @@ const data = [
 const Price = () => {
   return (
     <div id='price' className='price-container'>
-      <h1>Price Plan</h1>
+      <h1>Price Plan<span className='heading-line'></span></h1>
       <div className='price'>
         {data.map((d) =>
           <>
