@@ -7,6 +7,7 @@
     flex-direction: row;
     justify-content: space-between;
     margin: 50px;
+ 
   
 }
 
@@ -16,7 +17,7 @@
     padding: 15px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
     0 10px 10px rgba(0,0,0,0.22);
-    z-index: 1;
+
     width: 300px;
     height: 400px;
 
@@ -26,6 +27,8 @@
 .card:hover {
     transform: scale(1.099);
     transition: all .45s;
+    z-index: 2;
+    background-color: rgba(255, 255, 255,1);
 }
 
 .price-details span:first-child {
@@ -78,24 +81,72 @@
 
 @media screen and (max-width:750px) {
     .price {
-        flex-direction: column;
         gap: 25px;
         height: auto;
+        justify-content: space-evenly;
     }
 
     .card {
-        width: auto;
+        width: 150px;
+    }
+    .card img{
+        width: 50%;
+    }
+    .card h1 {
+        text-transform: uppercase;
+        font-size: small;
+    }
+    .price-details span:nth-child(2) {
+        font-size: 25px;
     }
 
 }
+
+@media screen and (max-width:680px) {
+    .price {
+         
+        gap: 0;
+        height: auto;
+        margin-left: 2%;
+        margin-right: 2%;
+         
+    }
+    .card {
+    /* height: fit-content;*/
+    }
+    .price .card:first-child{
+       
+        position: relative;
+        left: 15%;
+
+    }
+    .price .card:nth-child(2){
+      z-index: 1;
+    }
+    .price .card:nth-child(3){
+       
+        position: relative;
+        right: 15%;
+
+    }
+
+}
+
 @media screen and (max-width:450px) {
     
     .card {
-        min-width: 100px;
+        min-width: 35%;
     }
     
 .price-details span:nth-child(2) {
     font-size: 25px;
+}
+.price .card:first-child{
+       left: 25%;
+
+}
+.price .card:nth-child(3){
+    right: 25%;
 }
 
 }
