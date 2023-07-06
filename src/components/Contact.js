@@ -7,16 +7,20 @@ import flags from 'react-phone-number-input/flags'
 const Contact = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState()
+  const [phone, setPhone] = useState('')
   const [message, setMessage] = useState('')
-
+ 
   const [formData, setFormData] = useState([])
-
+  const Response= <p className='Response'>Thank You ✔</p>;
   const submitForm = (e) => {
     e.preventDefault();
 
-    const entery = { name: name, email: email, phone: phone, message: message };
-    setFormData([entery, ...formData])
+    setFormData([{ name: name, email: email, phone: phone, message: message }, ...formData])
+   
+    setEmail('')
+    setMessage('')
+    setName('')
+    setPhone('')
 
   }
   return (
@@ -31,15 +35,16 @@ const Contact = () => {
         <div className='from-container'>
 
           {/**Accutal contact form  */}
-          <form action='' onSubmit={submitForm}>
+          <form onSubmit={submitForm}>
+           <p className={`Response ${formData.length>0?'active':''}`}>Thank You ✔</p>;
             <div className='input-row'>
               <label htmlFor='name'>Name</label>
-              <input type='text' id='name' name='name' value={name} onChange={(e) => setName(e.target.value)} />
+              <input type='text' id='name' placeholder='Husnain' name='name' value={name} onChange={(e) => setName(e.target.value)} required/>
             </div>
 
             <div className='input-row'>
               <label htmlFor='email'>Email</label>
-              <input type='email' id='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+              <input type='email' id='email' placeholder='example@gmail.com' name='email' value={email} onChange={(e) => setEmail(e.target.value)} required/>
             </div>
 
             <div className='input-row'>
@@ -47,17 +52,19 @@ const Contact = () => {
               <PhoneInput
                 className='PhoneInput'
                 value={phone}
+                error={phone ? (isValidPhoneNumber(phone) ? 'undefined' : 'Invalid phone number') : 'Phone number required'}
                 onChange={setPhone}
                 defaultCountry='PK'
                 international
                 countryCallingCodeEditable={false}
                 flags={flags}
+                
               />
             </div>
 
             <div className='input-row'>
               <label htmlFor='message'>Message</label>
-              <textarea type='text' id='message' name='message' value={message} onChange={(e) => setMessage(e.target.value)} />
+              <textarea type='text' id='message' placeholder='Hello !' name='message' value={message} onChange={(e) => setMessage(e.target.value)} required/>
             </div>
 
             <button type='submit'>Submit</button>

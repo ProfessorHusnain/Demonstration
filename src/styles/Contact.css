@@ -7,7 +7,7 @@
     justify-content: center;
     flex-direction: row;
     gap: 5%;
-    margin-top: 2%;
+    margin: 2% 5%;
     height: 80%;
  
 }
@@ -21,13 +21,14 @@ form{
     background-color: rgba(255, 255, 255,0.5);
     border-radius: 20px;
     padding: 15px;
+    margin-left: 10px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
     0 10px 10px rgba(0,0,0,0.22);
-    z-index: 1;    
-    width: 80%;
+   
+    width: 90%;
 }
 .input-row{
-    margin: 20px 0 30px 0;
+    margin: 20px 0 20px 0;
     text-align: left;
 }
 .input-row label{
@@ -36,10 +37,12 @@ form{
     margin: 3%;
 }
 .input-row input,textarea{
- 
-    height: 23px;
+    display: block;
+    width: 95%;
+    font: inherit;
     border-radius: 10px;
     margin: 2% 0;
+    padding: 10px;
     background-color: rgba(255, 255, 255,0.5);
     border: 1px solid rgba(59, 48, 48, 0.25);
     box-shadow: 0 14px 28px rgba(59, 48, 48, 0.25);
@@ -47,14 +50,22 @@ form{
     
 }
 .input-row textarea{
-    max-width: 100%;
-    min-width: 100%;
+    max-width: 438px;
     text-align: justify;
-    max-height: 80px;
+    max-height: 50px;
 }
- 
+.Response{
+    color: green;
+    display: none;
+}
+.Response.active{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
 
 .map{
  width: 100%;
- margin: 0 5%;   
+   
 }
