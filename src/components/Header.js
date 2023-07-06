@@ -30,13 +30,15 @@ function Header({ isScrolled,isActive, menuClick }) {
       /**Making Transparent on scroll */
     return (
         <header className={isScrolled?'scrolled':''}>
-            <Link to='home' className="nav-link" smooth={true} offset={-85} duration={500}>
+             
+            <Link to='home'   smooth={true} offset={-85} duration={500}>
             <div className='logo'>
                 <h1>Next<span>X</span>io<span></span></h1>
             </div>
             </Link>
+             
             <div className="mobile">{isActive ? <RiCloseLine onClick={menuClick} /> : <TiThMenu onClick={menuClick} />}</div>
-            <NavBar />
+              <NavBar /> 
         </header>
     );
 }
