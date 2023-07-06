@@ -1,19 +1,29 @@
 .contact-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
- 
     height: 600px;
 }
 
 .contact {
-    margin: 0 20%;
-    
-    background: var(--eerie-black-2);
-    border: 1px solid var(--jet);
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5%;
+    margin-top: 2%;
+    height: 80%;
+ 
+}
+.from-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+form{
+ 
+    background-color: rgba(255, 255, 255,0.5);
     border-radius: 20px;
     padding: 15px;
-    box-shadow: var(--shadow-1);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+    0 10px 10px rgba(0,0,0,0.22);
+    z-index: 1;    
 }
 .input-row{
     margin: 30px 0;
@@ -27,16 +37,24 @@
 .input-row input,textarea{
     background-color: var(--white-2);
     border: none;
-    margin-top: 2%;
-    font-size: large;
-    border-radius: 10px;
+    margin-top: 2% 5%;
+  
+    background-color: rgba(255, 255, 255,0.5);
+        border: 1px solid rgba(59, 48, 48, 0.25);
+    box-shadow: 0 14px 28px rgba(59, 48, 48, 0.25);
+    
+    
 }
 .input-row textarea{
     max-width: 100%;
     min-width: 100%;
     text-align: justify;
+    max-height: 50%;
 }
 button{
-    margin: auto;
+     
 }
  
+.map{
+ width: 100%;   
+}

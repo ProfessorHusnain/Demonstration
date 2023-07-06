@@ -5,6 +5,7 @@ footer{
     width: 100%;
     justify-content: center;
     flex-direction: column;
+    color: var(--white-2);
 }
 
 .footer-content{
