@@ -99,7 +99,10 @@
     .price-details span:nth-child(2) {
         font-size: 25px;
     }
-
+    .action button{
+    width: 100%;
+    }
+    
 }
 
 @media screen and (max-width:680px) {

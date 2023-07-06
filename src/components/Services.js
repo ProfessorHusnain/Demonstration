@@ -3,8 +3,16 @@ import '../styles/Services.css'
 import '../styles/About.css'
 const data=[
     {title:'Company',
-    discription:'Our company is not profitable for who has not capcity for digitalize there business in due to high expenses.',
-    picture:'./images/i-5.svg'
+    discription:'Our company is not profitable for who has not capcity for digitalize there business in due to high expenses. We are offering !',
+    picture:'./images/i-5.svg',
+    services:[
+          'Modern SW Development',
+          'Front End',
+          'Microsoft & .Net',
+          'Databases',
+          'Mobile Apps',
+          'Devops & Development'
+    ]
    }
 ]
 
@@ -25,6 +33,14 @@ const Services = () => {
              <h1>{d.title}</h1>
              <p>{d.discription}</p>
              </div>
+             <ul>
+              {d.services.map((s)=>
+              <li>
+                {s}1
+              </li>
+              )}
+             </ul>
+            
            </div>
            </>
         )}

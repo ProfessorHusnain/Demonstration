@@ -169,7 +169,7 @@ body { background: var(--white-2); color: var(--smoky-black)  ; margin: 0;}
  
 
 button{
-  width: 200px;
+  width: 50%;
   cursor: pointer;
   border: 1px solid var(--light-gray);
   font-weight: 800;
