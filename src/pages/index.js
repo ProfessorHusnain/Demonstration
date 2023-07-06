@@ -100,7 +100,7 @@ const Home = () => {
         <About />
         <Services />
         <Price />
-       
+        <Contact />
         <Footer />
         {/*<Routes>
         
