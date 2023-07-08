@@ -10,11 +10,12 @@ const Footer = () => {
         <p>All Rights Reserved.</p>
         </div>
         <div className='social-links'>
+        {/*  I think this is not compulsory yet 😄
         <AiFillGithub />
         <AiFillLinkedin />
         <BsDiscord />
         <BsTwitter/>
-        <BsTwitch />
+        <BsTwitch />*/}
 
         </div>
      </footer>
