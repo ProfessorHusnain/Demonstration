@@ -25,4 +25,5 @@ yarn-error.log*
 # Mail Keys
 /src/util/secret.js
 
-.gitignore
+/.gitignore
+/.env
