@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Header from '../components/Header';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import Banner from '../components/Banner';
 import SideBar from '../components/SideBar';
 import About from '../components/About';
@@ -86,8 +86,6 @@ const Home = () => {
 
   return (
     <>
-      <Router>
-
         <div style={style}>
           <Header isScrolled={isScrolled} isActive={isSideBarActive} menuClick={toggleSideBar} />
           <SideBar isScrolled={isScrolled} isActive={isSideBarActive} menuClick={toggleSideBar} />
@@ -107,8 +105,6 @@ const Home = () => {
       <Route path='/' Component={Banner}></Route>
        <Route path='about' Component={About}></Route>
   </Routes>*/}
-      </Router>
-
     </>
   )
 }

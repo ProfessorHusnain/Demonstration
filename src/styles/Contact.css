@@ -56,12 +56,13 @@ form{
 }
 .Response{
     color: green;
-    display: none;
-}
-.Response.active{
     display: block;
     margin: 0;
     padding: 0;
+    margin-bottom: 5%;
+}
+.Response.error{
+    color: red;
 }
 
 

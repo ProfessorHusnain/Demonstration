@@ -1,28 +1,48 @@
-import React, { useState } from 'react'
+import React, { useState,useRef } from 'react'
 import '../styles/Contact.css'
 import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
 import flags from 'react-phone-number-input/flags'
+import { TEMPLATE_ID,PUBLIC_KEY,SERVICE_ID } from '../util/secret';
+import emailjs from '@emailjs/browser'
+ 
 
 const Contact = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [message, setMessage] = useState('')
-
+  const [status,setStatus]=useState(false)
+  const [submitted,setSubmitted]=useState(false)
+  const form=useRef()
   const [formData, setFormData] = useState([])
-  const Response = <p className='Response'>Thank You ✔</p>;
+   
+ 
+
+const sendMail = () => {
+
+  emailjs.sendForm(SERVICE_ID, 
+    TEMPLATE_ID,
+     form.current,
+    PUBLIC_KEY)
+  .then(() => {
+      setStatus(true)
+      setEmail('')
+      setMessage('')
+      setName('')
+      setPhone('')
+  }, (error) => {
+      console.log(error.text);
+  });
+
+}
+
   const submitForm = (e) => {
-    e.preventDefault();
-
-    setFormData([{ name: name, email: email, phone: phone, message: message }, ...formData])
-
-    setEmail('')
-    setMessage('')
-    setName('')
-    setPhone('')
-
+    e.preventDefault()
+    setSubmitted(true)
+    sendMail()
   }
+ 
   return (
     /**Container Hold the complete contact page */
     <div className='contact-container' id='contact'>
@@ -35,17 +55,27 @@ const Contact = () => {
         <div className='from-container'>
 
           {/**Accutal contact form  */}
-          <form onSubmit={submitForm}>
-            <p className={`Response ${formData.length > 0 ? 'active' : ''}`}>Thank You ✔</p>
+          <form ref={form} onSubmit={submitForm}>
+          {submitted && (status?<p className='Response'>Thank You ✔</p>:<p className='Response error'>Some Errors Occur ⛔</p>)}
             <div className='row-wrapper'>
               <div className='input-row'>
                 <label htmlFor='name'>Name</label>
-                <input type='text' id='name' placeholder='Husnain' name='name' value={name} onChange={(e) => setName(e.target.value)} required />
+                <input type='text' 
+                id='name' 
+                placeholder='Husnain' 
+                name='name' 
+                value={name} 
+                onChange={(e) => setName(e.target.value)} required />
               </div>
 
               <div className='input-row'>
                 <label htmlFor='email'>Email</label>
-                <input type='email' id='email' placeholder='example@gmail.com' name='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
+                <input type='email' 
+                id='email' 
+                placeholder='example@gmail.com' 
+                name='email' 
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} required />
               </div>
 
             </div>
@@ -60,13 +90,19 @@ const Contact = () => {
                 international
                 countryCallingCodeEditable={false}
                 flags={flags}
+                name='phone'
 
               />
             </div>
 
             <div className='input-row'>
               <label htmlFor='message'>Message</label>
-              <textarea type='text' id='message' placeholder='Hello !' name='message' value={message} onChange={(e) => setMessage(e.target.value)} required />
+              <textarea type='text' 
+              id='message' 
+              placeholder='Hello !' 
+              name='message' 
+              value={message} 
+              onChange={(e) => setMessage(e.target.value)} required />
             </div>
 
             <button type='submit'>Submit</button>
